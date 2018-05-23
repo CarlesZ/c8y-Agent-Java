@@ -15,6 +15,11 @@ It consists of the following modules:
  * assembly: Base packaging for all environments.
  * packages: Environment specific packaging.
  
+ # parkingpi.json
+   The Whole parkingpi depends on this json file **(/c8y-Agent-java/parking-pi-driver/parkingpi.json)** in this repository.
+   you can modify based on your needs say **parking pi's name,location, number of sensors to your parkingpi name, your prefferd location,your sensor needs in the parkingpi.json** file respectively.
+   
+ 
  # Pre Process
   At First you have to remove the Piface Driver and copy the ParkingPiDriver to RaspberryPi after Installing The Cumulocity Latest Rpi Agent to do this Run the following commands as sudo in the Terminal window 
   
@@ -22,6 +27,9 @@ It consists of the following modules:
   rm /usr/share/cumulocity-rpi-agent/lib/<<pifacedriver.jar Exact filename as it is>>
   cp <<ParkingPiDriver.jar Location>> /usr/share/cumulocity-rpi-agent/lib/
   cp <<json-simple-1.1.1.jar Location>> /usr/share/cumulocity-rpi-agent/lib/
+  cd /home/pi/Desktop/
+  mkdir c8y
+  cp <<parkingpi.json location>> /home/pi/Desktop/c8y/
   ```
  And Restart the agent.
  
@@ -29,7 +37,7 @@ It consists of the following modules:
   ***ParkingPiDriver.java***
   * To Run this Driver Apart from the above files You have add Google Simple Json dependency jar to the POM.XML.
   * The main Java class is parking-pi-driver\src\main\java\com\softwareag\parkingpi\ParkingPiDriver.java which updates the parking pi's name, position and parking pi's Status which is not set by the c8y raspberry-pi agent(sets only for the first time of running from the
-  * ParkingPi.json File which has been at the location /home/pi/Desktop/c8y/).
+  * ParkingPi.json File which has been at the location (/home/pi/Desktop/c8y/).
   * It also creates the ChildDevices(Basically the sensors) based on the Array size of sensors key in same Json file and copy the sensors array and updated with the SystemID(from c8y) also generate sendmeasure.Json file in same directory Using *ManageChildDevices.java* class.
   * The location of parkingPi.json be anywhere in pi but you have to update the file location in The class com\softwareag\parkingpi\PiProperties.java
   * Start to send Measurements to sensors using *MeasurementPublisher.java* class.
