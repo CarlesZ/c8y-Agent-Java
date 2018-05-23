@@ -17,7 +17,7 @@ It consists of the following modules:
  
  # parkingpi.json
    The Whole parkingpi depends on this json file **(/c8y-Agent-java/parking-pi-driver/parkingpi.json)** in this repository.
-   you can modify based on your needs say **parking pi's name,location, number of sensors to your parkingpi name, your prefferd location,your sensor needs in the parkingpi.json** file respectively.
+   you can modify based on your needs say **parking pi's name,location, number of sensors to your parkingpi name, your preferred location,your sensor needs in the parkingpi.json** file respectively.
    
  
  # Pre Process
