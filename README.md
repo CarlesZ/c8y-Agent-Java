@@ -21,7 +21,7 @@ It consists of the following modules:
    
  
  # Pre Process
-  At First you have to remove the Piface Driver and copy the ParkingPiDriver to RaspberryPi after Installing The Cumulocity Latest Rpi Agent to do this Run the following commands as sudo in the Terminal window 
+First Build this repository using maven get parkingPiDriver jar and then you have to remove the Piface Driver and copy the ParkingPiDriver to RaspberryPi after Installing The Cumulocity Latest Rpi Agent to do this Run the following commands as sudo in the Terminal window 
   
   ```
   rm /usr/share/cumulocity-rpi-agent/lib/<<pifacedriver.jar Exact filename as it is>>
